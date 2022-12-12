@@ -126,9 +126,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = '/'
 
 AUTHENTICATION_BACKENDS = [
-    # 'django.contrib.auth.backends.ModelBackend'
+    # 'django.contrib.auth.backends.ModelBackend.ModelBackend'
     'info.EmailBackend.EmailBackend'
 ]
+

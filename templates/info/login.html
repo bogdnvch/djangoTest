@@ -1,26 +1,24 @@
 {% extends 'info/base.html' %}
 
 {% block content %}
-<!--<div class="container">-->
-<!--  <div class="row justify-content-md-center text-center">-->
-<!--    <form method="POST" action="{% url 'login' %}" class="col-md-3">-->
-<!--      {% csrf_token %}-->
-<!--      <div class="mb-3">-->
-<!--        <label class="form-label">Email address</label>-->
-<!--        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
-<!--        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
-<!--      </div>-->
-<!--      <div class="mb-3">-->
-<!--        <label for="exampleInputPassword1" class="form-label">Password</label>-->
-<!--        <input type="password" class="form-control" id="exampleInputPassword1">-->
-<!--      </div>-->
-<!--      <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--    </form>-->
-<!--  </div>-->
-<!--</div>-->
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit">Войти</button>
-</form>
+<div class="col-4 rounded bg-light text-center">
+    <form method="post">
+        {% csrf_token %}
+        <div class="row row-cols-2 justify-content-center">
+            <div class="col-4 text-end mt-5">
+                <label for="{{ form.username.id_for_label}}" class="col-form-label"> {{ form.username.label }}: </label>
+            </div>
+            <div class="col mt-5 mb-3">
+                {{ form.username }}
+            </div>
+            <div class="col-4 text-end">
+                <label for="{{ form.password.id_for_label}}" class="col-form-label"> {{ form.password.label }}: </label>
+            </div>
+            <div class="col mb-4">
+                {{ form.password }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Войти</button>
+    </form>
+</div>
 {% endblock %}
